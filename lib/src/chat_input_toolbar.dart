@@ -71,6 +71,7 @@ class ChatInputToolbar extends StatelessWidget {
     ChatMessage message = ChatMessage(
       text: text,
       user: user,
+      date: DateTime.now().millisecondsSinceEpoch,
       messageIdGenerator: messageIdGenerator,
       createdAt: DateTime.now(),
     );
@@ -140,6 +141,19 @@ class ChatInputToolbar extends StatelessWidget {
                     controller.text = "";
 
                     onTextChange("");
+                    // // FocusScope.of(context).requestFocus(focusNode);
+
+                    // Timer(Duration(milliseconds: 150), () {
+                    //   scrollController.animateTo(
+                    //     reverse
+                    //         ? 0.0
+                    //         : scrollController.position.maxScrollExtent - 10.0,
+                    //     curve: Curves.easeOut,
+                    //     duration: const Duration(milliseconds: 300),
+                    //   );
+                    // });
+                    // print('Timer');
+                    // print(scrollController.debugLabel);
                   }
                 })
               else

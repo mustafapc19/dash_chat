@@ -17,6 +17,9 @@ class ChatMessage {
   /// message was delivered takes a [DateTime] object.
   DateTime createdAt;
 
+  /// Our custom key
+  int date;
+
   /// Takes a [ChatUser] object which is used to distinguish between
   /// users and also provide avaatar URLs and name.
   ChatUser user;
@@ -41,18 +44,18 @@ class ChatMessage {
   /// actions in message container.
   List<Widget> buttons;
 
-  ChatMessage({
-    String id,
-    @required this.text,
-    @required this.user,
-    this.image,
-    this.video,
-    this.quickReplies,
-    String Function() messageIdGenerator,
-    DateTime createdAt,
-    this.customProperties,
-    this.buttons
-  }) {
+  ChatMessage(
+      {String id,
+      @required this.text,
+      @required this.user,
+      @required this.date,
+      this.image,
+      this.video,
+      this.quickReplies,
+      String Function() messageIdGenerator,
+      DateTime createdAt,
+      this.customProperties,
+      this.buttons}) {
     this.createdAt = createdAt != null ? createdAt : DateTime.now();
     this.id = id != null
         ? id
